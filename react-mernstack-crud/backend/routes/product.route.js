@@ -76,7 +76,7 @@ router.route("/update-product/:id").put((req, res, next) => {
 //Se crea la ruta "/delete-proudct/:id" con router, se utiliza el método delete
 //req.params.id= solicitud a traves del parametro id
 // BORRAR Producto
-router.route("/delete-proudct/:id").delete((req, res, next) => {
+router.route("/delete-product/:id").delete((req, res, next) => {
   productSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);   // se puede modificar según los intereses  

@@ -9,12 +9,12 @@ let productSchema = new Schema(
     },
     descripcion: {
       type: String,
+    },   
+    precio: {
+      type: Number,
     },
     cantidad: {
       type: String,
-    },
-    precio: {
-      type: Number,
     },
   },
   {

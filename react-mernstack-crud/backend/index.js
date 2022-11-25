@@ -12,10 +12,14 @@ const db = require("../backend/database/db").mongoURI;
 // Connect to MongoDB from mLab
 
 // Instanciamos la conexión de mongoose
-mongoose
-  .connect(db, { useNewUrlParser: true }) // trae la ruta db, y el parametro useNewUrlParser: true= Evalua la conexión de la base de datos
-  .then(() => console.log("MongoDB successfully connected")) //Ejecuta este mensaje si la conexión esta correcta
-  .catch((err) => console.log(err)); // si la conexión no es correcta
+mongoose.connect('mongodb+srv://laplaza:laplaza2022@cluster0.qpcdev0.mongodb.net/reactdb?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }).then(
+  () => {
+    console.log("Database sucessfully connected!");
+  },
+  (error) => {
+    console.log("Could not connect to database : " + error);
+  }
+);
 
 const app = express(); // se instancia el express en la variable app
 app.use(bodyParser.json()); // trae funciones nide

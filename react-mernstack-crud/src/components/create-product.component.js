@@ -46,7 +46,7 @@ export default class CreateProduct extends Component {
     cantidad: this.state.cantidad,
   };
   axios
-  .post("http://localhost:4000/product/create-product", productObject)
+  .post("http://localhost:4000/products/create-product", productObject)
   .then((res) => console.log(res.data));
 this.setState({ name: "", descripcion: "", precio: "",cantidad: "",});
 
@@ -129,6 +129,20 @@ this.setState({ name: "", descripcion: "", precio: "",cantidad: "",});
             className="mt-4 my-3"
           >
             Guardar Producto
+          </Button>
+
+          <Button
+            variant="warning"
+            size="lg"
+            block="block"
+            type="submit"
+            className="mt-4 my-3"
+            href="/product-list"
+          >
+           
+            Ver lista de productos creados
+              
+            
           </Button>
         </Form>
   
